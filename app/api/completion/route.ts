@@ -9,10 +9,14 @@ const {
   OPENAI_API_KEY,
 } = process.env;
 
-const astraDb = new AstraDB(ASTRA_DB_APPLICATION_TOKEN, ASTRA_DB_API_ENDPOINT);
+console.log("ASTRA_DB_APPLICATION_TOKEN", ASTRA_DB_APPLICATION_TOKEN);
+console.log("ASTRA_DB_API_ENDPOINT", ASTRA_DB_API_ENDPOINT);
+console.log("OPENAI_API_KEY", OPENAI_API_KEY);
+
+const astraDb = new AstraDB("AstraCS:rUOTotZYumAyTdoHOYZHgZuG:ccf9d08f6dd51be6a152022c97a18d3e79e44d9912f45a1416735a33d640c0b4", "https://a870a5c5-cffb-46a2-9dbd-88db7f2dc81a-us-east-1.apps.astra.datastax.com");
 
 const openai = new OpenAI({
-  apiKey: OPENAI_API_KEY,
+  apiKey: "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",
 });
 
 export async function POST(req: Request) {
