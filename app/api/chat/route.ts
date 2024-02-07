@@ -85,21 +85,21 @@ export async function POST(req: Request) {
     const latestMessage = messages[messages?.length - 1]?.content;
 
     const embeddings = new CohereEmbeddings({
-      apiKey: COHERE_API_KEY,
+      apiKey: "suKzNRtGo0AenDHt0NcIsfzwAalgjY86HjPGCMeD",
       inputType: "search_query",
       model: "embed-english-v3.0",
     });
     
     const chatModel = new ChatOpenAI({
       temperature: 0.5,
-      openAIApiKey: OPENAI_API_KEY,
+      openAIApiKey: "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",
       modelName: llm ?? "gpt-4",
       streaming: true,
     });
     
     const astraConfig: AstraLibArgs = {
-      token: ASTRA_DB_APPLICATION_TOKEN,
-      endpoint: ASTRA_DB_API_ENDPOINT,
+      token: "AstraCS:rUOTotZYumAyTdoHOYZHgZuG:ccf9d08f6dd51be6a152022c97a18d3e79e44d9912f45a1416735a33d640c0b4",
+      endpoint: "https://a870a5c5-cffb-46a2-9dbd-88db7f2dc81a-us-east-1.apps.astra.datastax.com",
       collection: "article_embeddings",
       contentKey: "content",
     };
